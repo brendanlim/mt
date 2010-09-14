@@ -1,0 +1,16 @@
+# MT - MacRuby iTunes Script
+
+## Usage
+Copy mt to /usr/bin
+
+mt --help
+
+  Usage: mt [argument]
+  
+  Available Commands: 
+    n         # Play the next track
+    p         # Play the previous track
+    track     # Prints the current track
+    play      # Resumes play if paused
+    pause     # Pauses playback
+    search    # Searches for any string past this command
