@@ -87,8 +87,8 @@ class Mt
     puts "  search                  # Searches for any string past this command"
     puts "  play [search term]      # Searches and plays first item that matches search"
     puts ""
-    puts "    e.g.,: mt play deadmau5 ghosts  #=> Deadmau5 - Ghosts N Stuff"
-    puts "    e.g.,: mt play ghosts stuff     #=> Deadmau5 - Ghosts N Stuff"
+    puts "    e.g., mt play deadmau5 ghosts  #=> Deadmau5 - Ghosts N Stuff"
+    puts "    e.g., mt play ghosts stuff     #=> Deadmau5 - Ghosts N Stuff"
   end
 end
 
