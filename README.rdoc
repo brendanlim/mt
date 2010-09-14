@@ -17,3 +17,5 @@ Simple script that allows you to use iTunes from the command line.
     play      # Resumes play if paused
     pause     # Pauses playback
     search    # Searches for any string past this command
+    
+Copyright (c) 2010 Brendan G. Lim
