@@ -1,9 +1,12 @@
-# MT - MacRuby iTunes Script
+= MT - MacRuby iTunes Script
 
-## Usage
-Copy mt to /usr/bin
+Simple script that allows you to use iTunes from the command line.
 
-mt --help
+== Installation
+
+* Copy mt to /usr/bin
+
+== Available commands
 
   Usage: mt [argument]
   
