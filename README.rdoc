@@ -4,7 +4,7 @@ Simple script that allows you to use iTunes from the command line utilizing MacR
 
 == Installation
 
-* Copy mt to /usr/bin
+* Copy mt binary to /usr/bin
 
 == Available commands
 
