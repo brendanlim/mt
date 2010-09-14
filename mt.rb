@@ -71,23 +71,25 @@ class Mt
         args.delete_at(0)
         self.search_for(args.join(" "))
       else
-        puts "Invalid argument"
+        puts "'#{args[0]}' is an invalid command\n\n"
+        Mt.help
     end
+  end
+  
+  def self.help
+    puts "Usage: mt [command]"
+    puts ""
+    puts "Available Commands: "
+    puts "  n                       # Play the next track"
+    puts "  p                       # Play the previous track"
+    puts "  pp                      # Play/pause the current track"
+    puts "  track                   # Prints the current track"
+    puts "  search                  # Searches for any string past this command"
+    puts "  play [search term]      # Searches and plays first item that matches search"
+    puts ""
+    puts "    e.g.,: mt play deadmau5 ghosts  #=> Deadmau5 - Ghosts N Stuff"
+    puts "    e.g.,: mt play ghosts stuff     #=> Deadmau5 - Ghosts N Stuff"
   end
 end
 
-if ARGV.include?("--help")
-  puts "Usage: mt [argument]"
-  puts ""
-  puts "Available Commands: "
-  puts "  n                       # Play the next track"
-  puts "  p                       # Play the previous track"
-  puts "  pp                      # Play/pause the current track"
-  puts "  track                   # Prints the current track"
-  puts "  search                  # Searches for any string past this command"
-  puts "  play [search term]      # Searches and plays first item that matches search"
-  puts ""
-  puts "    e.g.,: mt play deadmau5 ghosts  #=> Deadmau5 - Ghosts N Stuff"
-else
-  mt = Mt.new(ARGV)  
-end
+ARGV.include?("--help") ? Mt.help : mt = Mt.new(ARGV)
