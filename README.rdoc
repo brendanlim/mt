@@ -1,6 +1,6 @@
 = MT - MacRuby iTunes Script
 
-Simple script that allows you to use iTunes from the command line.
+Simple script that allows you to use iTunes from the command line utilizing MacRuby and ScriptingBridge.
 
 == Installation
 
