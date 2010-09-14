@@ -43,6 +43,16 @@ class Mt
     end
   end
   
+  def search_and_play(term)
+    script  = "tell application \"iTunes\"\n"
+    script += " play first item of (search first library playlist for \"#{term}\")\n"
+    script += "end tell"
+    pnt = Pointer.new_with_type("@")
+    as = NSAppleScript.alloc.initWithSource(script)
+    as.executeAndReturnError(pnt)
+    self.print_current_track
+  end
+  
   def handle_request(args)
     return if args.length == 0
     case args[0].downcase.to_sym
@@ -52,10 +62,11 @@ class Mt
         self.previous_track
       when :track
         self.print_current_track
-      when :pause
-        self.pause
-      when :play
+      when :pp
         self.play
+      when :play
+        args.delete_at(0)
+        self.search_and_play(args.join(" "))
       when :search
         args.delete_at(0)
         self.search_for(args.join(" "))
@@ -69,12 +80,14 @@ if ARGV.include?("--help")
   puts "Usage: mt [argument]"
   puts ""
   puts "Available Commands: "
-  puts "  n         # Play the next track"
-  puts "  p         # Play the previous track"
-  puts "  track     # Prints the current track"
-  puts "  play      # Resumes play if paused"
-  puts "  pause     # Pauses playback"
-  puts "  search    # Searches for any string past this command"
+  puts "  n                       # Play the next track"
+  puts "  p                       # Play the previous track"
+  puts "  pp                      # Play/pause the current track"
+  puts "  track                   # Prints the current track"
+  puts "  search                  # Searches for any string past this command"
+  puts "  play [search term]      # Searches and plays first item that matches search"
+  puts ""
+  puts "    e.g.,: mt play deadmau5 ghosts  #=> Deadmau5 - Ghosts N Stuff"
 else
   mt = Mt.new(ARGV)  
 end

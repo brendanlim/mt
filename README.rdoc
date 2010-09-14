@@ -11,11 +11,13 @@ Simple script that allows you to use iTunes from the command line utilizing MacR
   Usage: mt [argument]
   
   Available Commands: 
-    n         # Play the next track
-    p         # Play the previous track
-    track     # Prints the current track
-    play      # Resumes play if paused
-    pause     # Pauses playback
-    search    # Searches for any string past this command
+    n                       # Play the next track
+    p                       # Play the previous track
+    pp                      # Play/pause the current track
+    track                   # Prints the current track
+    search                  # Searches for any string past this command
+    play [search term]      # Searches and plays first item that matches search
+      
+      e.g., mt play deadmau5 ghosts  #=> Deadmau5 - Ghosts N Stuff
     
 Copyright (c) 2010 Brendan G. Lim
