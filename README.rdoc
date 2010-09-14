@@ -6,9 +6,10 @@ Simple script that allows you to use iTunes from the command line utilizing MacR
 
   sudo cp mt /usr/bin
 
+
 == Available commands
 
-  Usage: mt [argument]
+  Usage: mt [command]
   
   Available Commands: 
     n                       # Play the next track
@@ -19,5 +20,8 @@ Simple script that allows you to use iTunes from the command line utilizing MacR
     play [search term]      # Searches and plays first item that matches search
       
       e.g., mt play deadmau5 ghosts  #=> Deadmau5 - Ghosts N Stuff
-    
+      e.g., mt play ghosts stuff     #=> Deadmau5 - Ghosts N Stuff
+
+Executing mt --help will show the available commands
+
 Copyright (c) 2010 Brendan G. Lim
